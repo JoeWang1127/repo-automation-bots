@@ -83,7 +83,7 @@ for (( idx=${#ungenerated_shas[@]}-1 ; idx>=0 ; idx-- )) ; do
     git -C "$GOOGLEAPIS" checkout "$sha"
     # Choose build targets.
     if [[ -z "$BUILD_TARGETS" ]] ; then
-        query='filter("-(csharp|php|ruby|nodejs)$", kind("rule", //...:*))'
+        query='filter("-(csharp|ruby|nodejs)$", kind("rule", //...:*))'
 
         if [ -d "$GOOGLEAPIS/google/cloud/aiplatform" ]; then
             echo "google/cloud/aiplatform directory found. Including Python targets for aiplatform."
